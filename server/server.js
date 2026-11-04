@@ -20,6 +20,7 @@ app.use(cors({ origin: process.env.CLIENT_URL || "*", credentials: true }));
 // Mount routes
 app.use("/api/auth", require("./routes/authRoutes"));
 app.use("/api/teams", require("./routes/teamRoutes"));
+app.use("/api/projects", require("./routes/projectRoutes"));
 
 // Health check route
 app.get("/api/health", (req, res) => {

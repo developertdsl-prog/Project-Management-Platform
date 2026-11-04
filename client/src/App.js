@@ -9,6 +9,7 @@ const Dashboard = React.lazy(() => import("./pages/Dashboard"));
 const Teams = React.lazy(() => import("./pages/Teams"));
 const TeamDetail = React.lazy(() => import("./pages/TeamDetail"));
 const Users = React.lazy(() => import("./pages/Users"));
+const Projects = React.lazy(() => import("./pages/Projects"));
 
 const ProtectedRoute = ({ children }) => {
   const { user, loading } = useAuth();
@@ -74,6 +75,14 @@ const App = () => {
               element={
                 <ProtectedRoute>
                   <Users />
+                </ProtectedRoute>
+              }
+            />
+            <Route
+              path="/projects"
+              element={
+                <ProtectedRoute>
+                  <Projects />
                 </ProtectedRoute>
               }
             />
