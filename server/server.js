@@ -22,6 +22,8 @@ app.use("/api/auth", require("./routes/authRoutes"));
 app.use("/api/teams", require("./routes/teamRoutes"));
 app.use("/api/projects", require("./routes/projectRoutes"));
 app.use("/api/tasks", require("./routes/taskRoutes"));
+app.use("/api/notifications", require("./routes/notificationRoutes"));
+app.use("/api/dashboard", require("./routes/dashboardRoutes"));
 
 // Health check route
 app.get("/api/health", (req, res) => {
