@@ -7,6 +7,8 @@ import {
   Settings,
   LogOut,
   Menu,
+  Monitor,
+  Briefcase,
 } from "lucide-react";
 
 const Sidebar = () => {
@@ -19,11 +21,25 @@ const Sidebar = () => {
     navigate("/login");
   };
 
+  const userRole = JSON.parse(localStorage.getItem("user") || "{}").role || "team_member";
+
   const menuItems = [
     { name: "Dashboard", icon: <LayoutDashboard size={20} />, path: "/" },
     {
-      name: "Users",
+      name: "Teams",
       icon: <Users size={20} />,
+      path: "/teams",
+      roles: ["admin", "project_manager", "team_member"],
+    },
+    {
+      name: "Projects",
+      icon: <Briefcase size={20} />,
+      path: "/projects",
+      roles: ["admin", "project_manager", "team_member"],
+    },
+    {
+      name: "Users",
+      icon: <Monitor size={20} />,
       path: "/users",
       roles: ["admin", "project_manager"],
     },
@@ -34,8 +50,6 @@ const Sidebar = () => {
       roles: ["admin"],
     },
   ];
-
-  const userRole = JSON.parse(localStorage.getItem("user") || "{}").role || "team_member";
 
   return (
     <aside
