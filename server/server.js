@@ -21,6 +21,7 @@ app.use(cors({ origin: process.env.CLIENT_URL || "*", credentials: true }));
 app.use("/api/auth", require("./routes/authRoutes"));
 app.use("/api/teams", require("./routes/teamRoutes"));
 app.use("/api/projects", require("./routes/projectRoutes"));
+app.use("/api/tasks", require("./routes/taskRoutes"));
 
 // Health check route
 app.get("/api/health", (req, res) => {

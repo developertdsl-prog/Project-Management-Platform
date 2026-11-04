@@ -38,6 +38,12 @@ const Sidebar = () => {
       roles: ["admin", "project_manager", "team_member"],
     },
     {
+      name: "Kanban",
+      icon: <Briefcase size={20} />,
+      path: "/kanban",
+      roles: ["admin", "project_manager", "team_member"],
+    },
+    {
       name: "Users",
       icon: <Monitor size={20} />,
       path: "/users",

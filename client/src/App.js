@@ -10,6 +10,8 @@ const Teams = React.lazy(() => import("./pages/Teams"));
 const TeamDetail = React.lazy(() => import("./pages/TeamDetail"));
 const Users = React.lazy(() => import("./pages/Users"));
 const Projects = React.lazy(() => import("./pages/Projects"));
+const KanbanBoard = React.lazy(() => import("./pages/KanbanBoard"));
+const TaskDetail = React.lazy(() => import("./pages/TaskDetail"));
 
 const ProtectedRoute = ({ children }) => {
   const { user, loading } = useAuth();
@@ -83,6 +85,30 @@ const App = () => {
               element={
                 <ProtectedRoute>
                   <Projects />
+                </ProtectedRoute>
+              }
+            />
+            <Route
+              path="/projects/:id"
+              element={
+                <ProtectedRoute>
+                  <Projects />
+                </ProtectedRoute>
+              }
+            />
+            <Route
+              path="/kanban"
+              element={
+                <ProtectedRoute>
+                  <KanbanBoard />
+                </ProtectedRoute>
+              }
+            />
+            <Route
+              path="/tasks/:id"
+              element={
+                <ProtectedRoute>
+                  <TaskDetail />
                 </ProtectedRoute>
               }
             />
