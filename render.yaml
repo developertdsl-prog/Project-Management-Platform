@@ -1,0 +1,25 @@
+services:
+  - type: web
+    name: project-management-backend
+    env: node
+    buildCommand: npm install
+    startCommand: npm start
+    envVars:
+      - key: PORT
+        value: 5000
+      - key: MONGO_URI
+        fromDatabase:
+          name: project-management-db
+          property: connectionString
+      - key: JWT_SECRET
+        generateValue: true
+      - key: JWT_EXPIRE
+        value: 30d
+      - key: CLIENT_URL
+        value: https://your-frontend-url.vercel.app
+
+databases:
+  - name: project-management-db
+    plan: free
+    databaseName: project-management
+    ipAllowList: []
