@@ -1,0 +1,46 @@
+# GitHub Issue and PR configuration for Project Management Platform
+
+issueTemplates:
+  - name: Bug Report
+    body: >
+      Found a bug? Please use the bug report template to help us track and fix it.
+      Include steps to reproduce, expected vs actual behavior, and screenshots.
+  - name: Feature Request
+    body: >
+      Have an idea for a new feature? Use the feature request template. Describe
+      the motivation, proposed solution, and acceptance criteria.
+
+pullRequestTemplates:
+  - name: Default PR Template
+    body: >
+      All pull requests must include a summary, objective, features implemented,
+      technical changes, related issues, testing performed, and milestone.
+
+labels:
+  - name: "bug"
+    description: "Something isn't working"
+    color: "d73a4a"
+  - name: "documentation"
+    description: "Improvements or additions to documentation"
+    color: "0075ca"
+  - name: "enhancement"
+    description: "New feature or request"
+    color: "a2eeef"
+  - name: "feature"
+    description: "New feature implementation"
+    color: "84b6eb"
+  - name: "frontend"
+    description: "Frontend-related work"
+    color: "fbca04"
+  - name: "backend"
+    description: "Backend-related work"
+    color: "005cc5"
+  - name: "testing"
+    description: "Testing-related work"
+    color: "bfd4f2"
+  - name: "priority-high"
+    description: "High priority issue"
+    color: "b60205"
+  - name: "pull-request"
+    description: "Pull request related"
+    color: "1d76db"
